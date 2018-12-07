@@ -17,16 +17,17 @@ public class Sorts{
   public static void bubbleSort(int[] data){  
 		int switchone = 0;
 		int switchtwo = 0;
-		while (switchtwo != 1)
-		for (int x =0; x< data.length - 1;x++){
-			if (data[x] > data[x + 1]){
-				int old = data[x + 1];
-				data[x + 1] = data[x];
-				data[x] = old;
-				switchone ++;
-			}
-			if (x == data.length - 2 && switchone == 0){
-				switchtwo ++;
+		while (switchtwo != 1){
+			for (int x =0; x< data.length - 1;x++){
+				if (data[x] > data[x + 1]){
+					int old = data[x + 1];
+					data[x + 1] = data[x];
+					data[x] = old;
+					switchone ++;
+				}
+				if (x == data.length - 2 && switchone == 0){
+					switchtwo ++;
+				}
 			}
 		}
 	}
