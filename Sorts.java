@@ -1,5 +1,5 @@
 public class Sorts{
-  public static void selectionsort(int [] ary) {
+  public static void selectionSort(int [] ary) {
     int smallest;
     int index;
     for (int x = 0; x < ary.length; x++){
@@ -15,26 +15,26 @@ public class Sorts{
     }
   }
   public static void bubbleSort(int[] data){  
-		int switchone = 0;
-		int switchtwo = 0;
-		while (switchtwo != 1){
+		boolean switched;
+		int numswitch = 0;
+		while (switched){
 			for (int x =0; x< data.length - 1;x++){
 				if (data[x] > data[x + 1]){
 					int old = data[x + 1];
 					data[x + 1] = data[x];
 					data[x] = old;
-					switchone ++;
+					numswitch ++;
 				}
-				if (x == data.length - 2 && switchone == 0){
-					switchtwo ++;
-				}
+			if (numswitch == 0){
+				switched = false;
+			}
 			}
 		}
 	}
 
   public static void main(String[] args){
     int[] arr = {-1231231, 2, 3, 3, 4, 2, 4, 8, 12};
-    selectionsort(arr);
+    selectionSort(arr);
     for (int x = 0; x < arr.length;x++){
       System.out.println(arr[x]);
     }
