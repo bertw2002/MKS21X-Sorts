@@ -15,7 +15,7 @@ public class Driver{
       Sorts.bubbleSort(randish);
     }
     if(artie[1].equals("insertion")){
-      Sorts.bubbleSort(randish);
+      Sorts.insertionsort(randish);
     }
     if(artie[1].equals("test")){
       int[] randish2 = Arrays.copyOf(randish,randish.length);
