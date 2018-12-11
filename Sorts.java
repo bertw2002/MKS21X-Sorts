@@ -33,28 +33,21 @@ public class Sorts{
 		}
 	}
   public static void insertionSort(int[] ary){
-    int least = 0;
-    int secondi = 0;
-    /*
-    a-Find the smallest element located at index i or any of the higher indices.
-    b-Swap that value into index i.
-    c-Increase i
-    */
-    //loop to repeat steps a, b, and c.
-    for (int x = 0; x < ary.length; x++){
-      least = ary[x];
-      //finds smallest from index x
-      for (int y = x; y < ary.length; y ++){
-        if (least > ary[y]){
-          least = ary[y];
-          secondi = y;
-        }
-      }
-      //sets values
-      int old = ary[x];
-      ary[x] = least;
-      ary[secondi] = old;
-    }
+	for (int x = 0;x < ary.length; x++){
+		for (int y = x;y >= 0; y --){
+			if (ary[x] < ary[y]){
+				int old = ary[x];
+				shift(ary, y, x);
+				ary[y] = old;			
+			}		
+		}
+	}
+  }
+
+  public static void shift(int[] ary, int start, int end){
+	for (int x = start; x <= end; x++){
+		ary[x] = ary[x + 1];	
+	}
   }
 
 
