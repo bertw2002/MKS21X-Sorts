@@ -4,11 +4,13 @@ public class Sorts{
     int index;
     for (int x = 0; x < ary.length; x++){
       smallest = x;
+      //loop to find the smallest variable from x
       for (int y = x ; y < ary.length;y ++){
         if (ary[y] < ary[smallest]){
           smallest = y;
         }
       }
+      //puts smallest from x into correct spot (x)
       int first = ary[x];
       ary[x] = ary[smallest];
       ary[smallest] = first;
@@ -16,8 +18,10 @@ public class Sorts{
   }
   public static void bubbleSort(int[] data){
 		boolean switched = true;
+		//loop until there is no switch
 		while (switched){
       switched = false;
+			//if greater, switch the variables
 			for (int x =0; x< data.length - 1;x++){
 				if (data[x] > data[x + 1]){
 					int old = data[x];
@@ -53,6 +57,8 @@ public class Sorts{
     }
   }
 
+
+//main................
   public static void main(String[] args){
     int[] arr = {-1231231, 2, 3, 3, 4, 2, 4, 8, 12};
     selectionSort(arr);
