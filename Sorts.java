@@ -32,22 +32,30 @@ public class Sorts{
 			}
 		}
 	}
+
   public static void insertionSort(int[] ary){
-	for (int x = 0;x < ary.length; x++){
-		for (int y = x;y >= 0; y --){
-			if (ary[x] < ary[y]){
-				int old = ary[x];
-				shift(ary, y, x);
-				ary[y] = old;			
-			}		
-		}
-	}
+    int ind = 0;
+    int y;
+    //loop for loop
+  	for (int x = 1;x < ary.length; x++){
+      int old = ary[x];
+      //shifts elements over where they are needed.
+  		for (y = x - 1;y >= 0 && old < ary[y]; y--){
+        if (old < ary[y]){
+    			ary[y + 1] = ary[y];
+          ind = y - 1;
+        }
+  		}
+      //places new elemnt in hole
+      ary[y + 1] = old;
+  	}
   }
 
+
   public static void shift(int[] ary, int start, int end){
-	for (int x = start; x <= end; x++){
-		ary[x] = ary[x + 1];	
-	}
+  	for (int x = start; x <= end; x++){
+  		ary[x] = ary[x + 1];
+	 }
   }
 
 
@@ -63,7 +71,7 @@ public class Sorts{
     for (int x = 0; x < arr2.length; x++){
     	System.out.println(arr2[x]);
     }
-    int[] arr3 = {-12321312, 2, 3, 3, 4, 4, 8, 12, 3,3,4,3,4,34,0,6,2,45,2,45,234,5,23,45};
+    int[] arr3 = {-12321312, 2, 3, 3, 4, 4, 8, 12, 3,3,4,3,4,34,0,6,2,45,2,45,234,5,23};
     insertionSort(arr3);
     for (int x = 0; x < arr3.length; x++){
       System.out.println(arr3[x]);
