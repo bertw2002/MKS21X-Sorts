@@ -6,6 +6,9 @@ public class Node{
     this.next = next;
     this.prev = prev;
   }
+  public Node(int data){
+    this.data = data;
+  }
   public int getData(){
     return data;
   }
@@ -15,13 +18,13 @@ public class Node{
   public Node getPrev(){
     return prev;
   }
-  public void setData(){
+  public void setData(int data){
     this.data = data;
   }
-  public void setNext(){
+  public void setNext(Node next){
     this.next = next;
   }
-  public void setPrev(){
+  public void setPrev(Node prev){
     this.prev = prev;
   }
 }
